@@ -16,10 +16,12 @@ public class LocalClassDemo {
         // (the boilerplate code in the constructor copies low, high and generator
         // into instance variables of the class)
         class RandomSequence implements IntSequence {
+            @Override
             public int next() {
                 return low + generator.nextInt(high - low + 1);
             }
 
+            @Override
             public boolean hasNext() {
                 return true;
             }
@@ -29,10 +31,12 @@ public class LocalClassDemo {
 
     public static IntSequence randomIntsAnonymous(int low, int high) {
         return new IntSequence() {
+            @Override
             public int next() {
                 return low + generator.nextInt(high - low + 1);
             }
 
+            @Override
             public boolean hasNext() {
                 return true;
             }

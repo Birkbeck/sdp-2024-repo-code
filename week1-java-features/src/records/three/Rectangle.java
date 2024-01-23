@@ -17,6 +17,10 @@ public record Rectangle(double length, double width) {
         }
     }
 
+    public Rectangle(double side) {
+        this(side, side);
+    }
+
     // Public accessor method
     @Override
     public double length() {
