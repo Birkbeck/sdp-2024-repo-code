@@ -10,7 +10,7 @@ public class Example {
     }
 
     static void expression1(Day day){
-        int numLetters = 0;
+        final int numLetters;
         switch (day) {
             case MONDAY:
             case FRIDAY:
@@ -34,7 +34,7 @@ public class Example {
     }
 
     static void expression2(Day day) {
-        int numLetters = 0;
+        final int numLetters;
         switch (day) {
             case MONDAY, FRIDAY, SUNDAY -> numLetters = 6;
             case TUESDAY -> numLetters = 7;
@@ -52,7 +52,7 @@ public class Example {
                 case TUESDAY -> 7;
                 case THURSDAY, SATURDAY -> 8;
                 case WEDNESDAY -> 9;
-                // default not needed!
+                // default not needed because all possible values are covered!
 
                 // switch expressions and switch statements used to throw a NullPointerException
                 // if the value of the selector expression is null.
@@ -84,7 +84,7 @@ public class Example {
                 System.out.println(9);
                 yield 9;
             }
-            // default not needed!
+            // default not needed because all possible values are covered!
         };
         System.out.println(numLetters);
     }

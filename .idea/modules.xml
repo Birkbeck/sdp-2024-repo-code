@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/week1/week1.iml" filepath="$PROJECT_DIR$/week1/week1.iml" />
       <module fileurl="file://$PROJECT_DIR$/week1-java-features/week1-java-features.iml" filepath="$PROJECT_DIR$/week1-java-features/week1-java-features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week2/week2.iml" filepath="$PROJECT_DIR$/week2/week2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week2-lambdas-notes/week2-lambdas-notes.iml" filepath="$PROJECT_DIR$/week2-lambdas-notes/week2-lambdas-notes.iml" />
     </modules>
   </component>
 </project>
