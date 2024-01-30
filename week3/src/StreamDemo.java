@@ -16,32 +16,41 @@ public class StreamDemo {
     public static void main(String... args) {
         List<Dish> list = Dish.getMenu();
 
-        //System.out.println(list.stream()
-        //        .filter(Dish::vegetarian)
-        //        .toList());
+//        List<Dish> dl = list.stream()
+//                .filter(Dish::vegetarian)
+//                .toList();
+//        System.out.println(dl);
 
-        //list.stream()
-        //        .map(d -> d.name())
-        //        .forEach(n -> System.out.println(n));
+//        list.stream()
+//                .map(Dish::name)
+//                .forEach(n -> System.out.println(n));
 
-        System.out.println(list.stream()
-                .flatMap(d -> list.stream()
-                        .filter(Dish::vegetarian)
-                        .map(d1 -> Stream.of(d, d1).collect(Collectors.toSet())))
-                .distinct()
-                .toList());
+//        System.out.println(list.stream()
+//                .flatMap(d -> list.stream()
+//                        .filter(Dish::vegetarian)
+//                        .map(d1 -> Stream.of(d, d1).collect(Collectors.toSet())))
+//                .distinct()
+//                .toList());
 
-//        List<List<Dish>> result = new ArrayList<>();
+//       List<List<Dish>> result = new ArrayList<>();
 //        for (Dish d : list) {
 //            for (Dish d1 : list)
 //                result.add(List.of(d, d1));
 //        }
+//        System.out.print(result);
 
-//        System.out.println(list.stream()
-//                .map(d -> list.stream()
-//                        .map(d1 -> List.of(d, d1)))
-//                .toList());
-//
+        list.stream()
+                .peek(d -> System.out.println("P " + d))
+                .filter(d -> d.vegetarian())
+                .peek(d -> System.out.println("D " + d))
+                .findFirst();
+
+//        System.out.println();
+//        var dl2 = list.stream()
+//                .flatMap(d -> pairsWithDish(d, list))
+//                .toList();
+//        System.out.println(dl2);
+
 //        List<List<List<Dish>>> result1 = new ArrayList<>();
 //        for (Dish d : list) {
 //            List<List<Dish>> r = new ArrayList<>();
@@ -49,7 +58,13 @@ public class StreamDemo {
 //                r.add(List.of(d, d1));
 //            result1.add(r);
 //        }
-//
+
+    }
+
+
+    private static Stream<List<Dish>> pairsWithDish(Dish d, List<Dish> list) {
+        return list.stream()
+                .map(d1 -> List.of(d, d1));
     }
 
     public static List<String> getList() {
