@@ -6,55 +6,58 @@ import java.util.function.Function;
 
 public class MethodReferencesDemo {
 
-    public static void main(String[] args) {
-        MethodReferencesDemo a = new MethodReferencesDemo();
-        String k = a.m(1);
+    public static class A {
 
-        Consumer<Integer> g = System.out::print;
-        Function<Integer, String> f = a::m;
-        BiFunction<MethodReferencesDemo, Integer, String> f2 = MethodReferencesDemo::m2;
-        BiFunction<MethodReferencesDemo, String, String> f2s = MethodReferencesDemo::m2;
-        BiFunction<MethodReferencesDemo, Integer, String> f3 = MethodReferencesDemo::m;
-        BiFunction<MethodReferencesDemo, Integer, String> f3p = new BiFunction<MethodReferencesDemo, Integer, String>() {
-            @Override
-            public String apply(MethodReferencesDemo a, Integer integer) {
-                return a.m(integer);
-            }
-        };
-        BiFunction<MethodReferencesDemo, StringBuilder, String> fsb = new BiFunction<MethodReferencesDemo, StringBuilder, String>() {
-            @Override
-            public String apply(MethodReferencesDemo a, StringBuilder stringBuilder) {
-                return stringBuilder.toString();
-            }
-        };
-        BiFunction<MethodReferencesDemo, String, String> f3s = MethodReferencesDemo::m;
-        BiFunction<MethodReferencesDemo, String, String> f3ps = new BiFunction<MethodReferencesDemo, String, String>() {
-            @Override
-            public String apply(MethodReferencesDemo a, String string) {
-                return a.m(string);
-            }
-        };
+        public static void main() {
+            A a = new A();
+            String k = a.m(1);
 
-        String s = f3.apply(a, 22);
-        String s1 = f.apply(42);
+            Consumer<Integer> g = System.out::print;
+            Function<Integer, String> f = a::m;
+            BiFunction<A, Integer, String> f2 = A::m2;
+            BiFunction<A, String, String> f2s = A::m2;
+            BiFunction<A, Integer, String> f3 = A::m;
+            BiFunction<A, Integer, String> f3p = new BiFunction<A, Integer, String>() {
+                @Override
+                public String apply(A a, Integer integer) {
+                    return a.m(integer);
+                }
+            };
+            BiFunction<A, StringBuilder, String> fsb = new BiFunction<A, StringBuilder, String>() {
+                @Override
+                public String apply(A a, StringBuilder stringBuilder) {
+                    return stringBuilder.toString();
+                }
+            };
+            BiFunction<A, String, String> f3s = A::m;
+            BiFunction<A, String, String> f3ps = new BiFunction<A, String, String>() {
+                @Override
+                public String apply(A a, String string) {
+                    return a.m(string);
+                }
+            };
 
-        var i = 1;
+            String s = f3.apply(a, 22);
+            String s1 = f.apply(42);
 
-        var sb = new StringBuilder();
+            var i = 1;
 
-        var al = new ArrayList<Integer>();
+            var sb = new StringBuilder();
 
-        List<Integer> al2 = new ArrayList<>();
+            var al = new ArrayList<Integer>();
 
-        var h = a.m(23);
-    }
+            List<Integer> al2 = new ArrayList<>();
 
-    public <T> String m(MethodReferencesDemo this, T i) {
-        var ii = i;
-        return "0";
-    }
+            var h = a.m(23);
+        }
 
-    public static <T> String m2(MethodReferencesDemo t, T i) {
-        return "1";
+        public <T> String m(A this, T i) {
+            var ii = i;
+            return "0";
+        }
+
+        public static <T> String m2(A t, T i) {
+            return "1";
+        }
     }
 }

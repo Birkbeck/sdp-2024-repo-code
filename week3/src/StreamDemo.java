@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -15,6 +12,12 @@ public class StreamDemo {
     }
     public static void main(String... args) {
         List<Dish> list = Dish.getMenu();
+
+//        List<Integer> integers = list.stream()
+//                .filter(Dish::vegetarian)
+//                .map(Dish::calories)
+//                .toList();
+//        List<Dish> list3 = stream.toList();
 
 //        List<Dish> dl = list.stream()
 //                .filter(Dish::vegetarian)
@@ -32,23 +35,38 @@ public class StreamDemo {
 //                .distinct()
 //                .toList());
 
-//       List<List<Dish>> result = new ArrayList<>();
-//        for (Dish d : list) {
-//            for (Dish d1 : list)
-//                result.add(List.of(d, d1));
-//        }
-//        System.out.print(result);
+       List<List<Dish>> result = new ArrayList<>();
+        for (Dish d : list) {
+            for (Dish d1 : list)
+                result.add(List.of(d, d1));
+        }
+        System.out.println(result);
 
-        list.stream()
-                .peek(d -> System.out.println("P " + d))
+        var o = list.stream()
                 .filter(d -> d.vegetarian())
-                .peek(d -> System.out.println("D " + d))
+                .flatMap(d -> list.stream()
+                        .filter(d1 -> d1.calories() < 500)
+                        .map(d1 -> List.of(d, d1)))
+                .toList();
+        System.out.println(o);
+
+        Optional<Dish> e = list.stream()
                 .findFirst();
+        e.ifPresent(System.out::println);
+        //        .ifPresent(s -> System.out.println(s));
+
+
+
+//        list.stream()
+//                .peek(d -> System.out.println("before filter " + d))
+//                .filter(Dish::vegetarian)
+//                .peek(d -> System.out.println("after filter " + d))
+//                .findFirst();
 
 //        System.out.println();
-//        var dl2 = list.stream()
-//                .flatMap(d -> pairsWithDish(d, list))
-//                .toList();
+        var dl2 = list.stream()
+                .flatMap(d -> pairsWithDish(d, list))
+                .toList();
 //        System.out.println(dl2);
 
 //        List<List<List<Dish>>> result1 = new ArrayList<>();
