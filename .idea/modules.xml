@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/week3/week3.iml" filepath="$PROJECT_DIR$/week3/week3.iml" />
       <module fileurl="file://$PROJECT_DIR$/week3-streams-notes/week3-streams-notes.iml" filepath="$PROJECT_DIR$/week3-streams-notes/week3-streams-notes.iml" />
       <module fileurl="file://$PROJECT_DIR$/worksheet-1-solid-principles-solutions/worksheet-1-solid-principles-solutions.iml" filepath="$PROJECT_DIR$/worksheet-1-solid-principles-solutions/worksheet-1-solid-principles-solutions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/worksheet-2-lambdas-solutions/worksheet-2-lambdas-solutions.iml" filepath="$PROJECT_DIR$/worksheet-2-lambdas-solutions/worksheet-2-lambdas-solutions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/worksheet-3-streams-solutions/worksheet-3-streams-solutions.iml" filepath="$PROJECT_DIR$/worksheet-3-streams-solutions/worksheet-3-streams-solutions.iml" />
     </modules>
   </component>
 </project>

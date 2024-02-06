@@ -55,6 +55,10 @@ public class SupportSession {
                         .map(n2 -> new Pair(n1, n2)))
                 //.filter((n1, n2) -> (n1 + n2) % 3 == 0)
                 .filter(p -> (p.n1() + p.n2()) % 3 == 0)
+                // alternatively: deconstruction in Java 21
+                .filter(p -> switch (p) {
+                    case Pair(var i1, var i2) -> (i1 + i2) % 3 == 0;
+                })
                 .toList();
         pairs.forEach(System.out::println);
         System.out.println();
