@@ -2,10 +2,9 @@ package behavioural.strategyalt;
 
 import java.util.Comparator;
 
-public class StringIntegerComparator implements Comparator {
+public class StringIntegerComparator implements Comparator<String> {
     @Override
-    public int compare(Object o1, Object o2) {
-        return Integer.parseInt((String) o1) -
-            Integer.parseInt((String) o2);
+    public int compare(String o1, String o2) {
+        return Integer.parseInt(o1) - Integer.parseInt(o2);
     }
 }

@@ -8,7 +8,8 @@ public abstract class CalculatorTemplate implements Calculator {
     public final void calculate(double operand) {
         if (this.initialized) {
             this.result = this.doCalculate(this.result, operand);
-        } else {
+        }
+        else {
             this.result = operand;
             this.initialized = true;
         }
@@ -16,7 +17,7 @@ public abstract class CalculatorTemplate implements Calculator {
 
     @Override
     public final double getResult() {
-        return result; // throw exception if !initialized
+        return result; // throw exception if not initialized
     }
 
     protected abstract double doCalculate(double o1, double o2);

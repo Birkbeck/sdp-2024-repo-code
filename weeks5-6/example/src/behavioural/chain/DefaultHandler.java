@@ -9,7 +9,8 @@ public class DefaultHandler extends MessageHandler {
     public void handle(Message message) {
         if (isSpam(message)) {
             // handle spam
-        } else {
+        }
+        else {
             super.handle(message);
         }
     }

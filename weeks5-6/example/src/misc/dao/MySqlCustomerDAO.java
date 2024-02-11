@@ -22,7 +22,7 @@ public class MySqlCustomerDAO implements CustomerDAO {
     }
 
     @Override
-    public List getCustomers() throws DataAccessException {
+    public List<Customer> getCustomers() throws DataAccessException {
         return null;
     }
 

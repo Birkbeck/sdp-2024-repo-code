@@ -6,7 +6,8 @@ public class ProxyPatternTest {
         try {
             executor.runCommand("ls -ltr");
             executor.runCommand(" rm -rf abc.pdf");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println("Exception Message::" + e.getMessage());
         }
     }

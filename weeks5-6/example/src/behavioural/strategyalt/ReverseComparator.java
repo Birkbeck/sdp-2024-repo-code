@@ -2,15 +2,15 @@ package behavioural.strategyalt;
 
 import java.util.Comparator;
 
-public class ReverseComparator implements Comparator {
-    private final Comparator c;
+public class ReverseComparator<T> implements Comparator<T> {
+    private final Comparator<T> c;
 
-    public ReverseComparator(Comparator c) {
+    public ReverseComparator(Comparator<T> c) {
         this.c = c;
     }
 
     @Override
-    public int compare(Object o1, Object o2) {
+    public int compare(T o1, T o2) {
         return c.compare(o2, o1);
     }
 }

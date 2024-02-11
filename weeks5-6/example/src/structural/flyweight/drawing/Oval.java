@@ -11,7 +11,8 @@ public class Oval implements Shape {
         System.out.println("Creating Oval object with fill=" + fill);
         try { // add time delay
             Thread.sleep(2000);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

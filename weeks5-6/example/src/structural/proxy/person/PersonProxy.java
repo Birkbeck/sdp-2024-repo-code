@@ -2,23 +2,23 @@ package structural.proxy.person;
 
 public class PersonProxy implements PersonInterface {
 
-    private final Person mPerson;
-    private final String mCachedName;
+    private final Person person;
+    private final String cachedName;
 
     public PersonProxy(Person p) {
-        mPerson = p;
-        mCachedName = mPerson.getName();
+        person = p;
+        cachedName = person.getName();
     }
 
     @Override
     public String getName() {
         // return the cached (local) version
-        return mCachedName;
+        return cachedName;
     }
 
     @Override
     public float getWeight() {
         // Pass through the request to the real object
-        return mPerson.getWeight();
+        return person.getWeight();
     }
 }

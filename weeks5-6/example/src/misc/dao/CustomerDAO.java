@@ -8,7 +8,7 @@ public interface CustomerDAO {
 
     Customer getCustomer(String id) throws DataAccessException;
 
-    List getCustomers() throws DataAccessException;
+    List<Customer> getCustomers() throws DataAccessException;
 
     void removeCustomer(String id) throws DataAccessException;
 

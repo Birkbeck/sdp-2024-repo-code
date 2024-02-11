@@ -18,7 +18,7 @@ public class Example {
         out = new ZipOutputStream(out);      // compress all data
 
 
-        final ByteCounterOutputStream bout = new ByteCounterOutputStream(out);
+        ByteCounterOutputStream bout = new ByteCounterOutputStream(out);
 //        for (int b = in.read(); b != -1; b = in.read()) {
 //            bout.write(b);
 //        }

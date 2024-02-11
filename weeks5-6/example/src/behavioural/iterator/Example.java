@@ -14,7 +14,7 @@ public class Example {
         }
         System.out.println();
 
-        Iterator it = ls.iterator();
+        Iterator<String> it = ls.iterator();
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
         }
@@ -25,7 +25,7 @@ public class Example {
         }
         System.out.println();
 
-        MyIterator myit = new MyIterator(ls.iterator());
+        MyIterator<String> myit = new MyIterator<>(ls.iterator());
         while (myit.hasNext()) {
             System.out.print(myit.next() + " ");
         }

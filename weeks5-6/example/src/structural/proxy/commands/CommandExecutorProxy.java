@@ -13,10 +13,12 @@ public class CommandExecutorProxy implements CommandExecutor {
     public void runCommand(String cmd) throws Exception {
         if (isAdmin) {
             executor.runCommand(cmd);
-        } else {
+        }
+        else {
             if (cmd.trim().startsWith("rm")) {
                 throw new Exception("rm behavioural.command is not allowed for non-admin users.");
-            } else {
+            }
+            else {
                 executor.runCommand(cmd);
             }
         }
