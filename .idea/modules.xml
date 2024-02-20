@@ -35,6 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/worksheet-1-solid-principles-solutions/worksheet-1-solid-principles-solutions.iml" filepath="$PROJECT_DIR$/worksheet-1-solid-principles-solutions/worksheet-1-solid-principles-solutions.iml" />
       <module fileurl="file://$PROJECT_DIR$/worksheet-2-lambdas-solutions/worksheet-2-lambdas-solutions.iml" filepath="$PROJECT_DIR$/worksheet-2-lambdas-solutions/worksheet-2-lambdas-solutions.iml" />
       <module fileurl="file://$PROJECT_DIR$/worksheet-3-streams-solutions/worksheet-3-streams-solutions.iml" filepath="$PROJECT_DIR$/worksheet-3-streams-solutions/worksheet-3-streams-solutions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/worksheet-4-reflection-solutions/worksheet-4-reflection-solutions.iml" filepath="$PROJECT_DIR$/worksheet-4-reflection-solutions/worksheet-4-reflection-solutions.iml" />
     </modules>
   </component>
 </project>
