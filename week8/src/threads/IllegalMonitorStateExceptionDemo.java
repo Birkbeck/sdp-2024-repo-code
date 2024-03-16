@@ -21,7 +21,7 @@ public class IllegalMonitorStateExceptionDemo {
                 System.out.println(Thread.currentThread().getName() + " starts waiting");
                 synchronized (obj) {
                     //Calling wait() method outside of synchronized area
-                    obj.wait();    // Raises IllegalMonitorStateException
+                    obj.wait();    // throws IllegalMonitorStateException
                 }
                 System.out.println(Thread.currentThread().getName() + " ends waiting");
             }
@@ -41,7 +41,7 @@ public class IllegalMonitorStateExceptionDemo {
                 System.out.println(Thread.currentThread().getName() + " notifies");
                 synchronized (obj) {
                     // Calling notify() outside of synchronized area
-                    obj.notify();         // Raises IllegalMonitorStateException
+                    obj.notifyAll();         // throws IllegalMonitorStateException
                 }
             }
             catch (InterruptedException ex) {
